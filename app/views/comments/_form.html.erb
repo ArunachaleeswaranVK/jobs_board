@@ -1,0 +1,5 @@
+<%= simple_form_for([@job,@job.comments.build] ,:html => { :class => 'form-horizontal' } , html: {multipart: true }) do |f| %>
+    <%= f.input :name ,input_html: {class: "form-control" } %>
+    <%= f.input :body ,input_html: {class: "form-control" } %>
+    <%= f.button :submit , class: "btn btn-default" %>
+<% end %>

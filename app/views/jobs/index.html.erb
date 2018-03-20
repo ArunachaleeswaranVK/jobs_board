@@ -1,0 +1,18 @@
+<h1>Listing all Jobs</h1>
+<%= form_tag jobs_path, :method => :get do %>
+<p>
+    <%= text_field_tag :search, params[:search] %>
+    <% submit_tag "Search", :name => nil %>
+</p>
+<% end %>
+
+
+
+<% @jobs.each do |job| %>
+<div>
+    <p><%= link_to (image_tag job.image.url(:medium)), job %></p>
+    <h2><%= link_to job.title , job %></h2>
+</div>
+<% end %>
+<br>
+<%= link_to "Create New Job" , new_job_path %>

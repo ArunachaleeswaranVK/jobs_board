@@ -1,0 +1,18 @@
+<h1>This is the show page</h1>
+<div>
+    <h2><%= @job.title %></h2>
+    <br>
+    <p><%= @job.description %></p>
+    <p><%= image_tag  @job.image.url(:medium) %></p>
+</div>
+
+<div>
+    <%= render @job.comments %>
+    <h3>Add a comment</h3>
+    <%= render "comments/form" %>
+</div>
+
+
+<%= link_to "All Jobs" , root_path %> |
+<%= link_to "Edit" , edit_job_path(@job) %> |
+<%= link_to "Delete", job_path(@job), method: :delete, data: {confirm: "Are you sure ?" } %>
